@@ -11,7 +11,7 @@
 }
 
 .connection-contacts {
-    width: 37%;
+    min-width: 365px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -36,7 +36,7 @@
 }
 
 .connection-contact-form {
-    width: 63%;
+    min-width: 575px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -49,5 +49,36 @@
 
     &__header {
         color: $color4;
+    }
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__textarea {
+        height: 48px;
+        padding: 10px 15px;
+        font-family: "Rubik", sans-serif;
+        font-size: 14px;
+        outline: none;
+    }
+
+    &__submit {
+        height: 48px;
+        background: $color1;
+        border: none;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+.form-fields-block {
+    display: flex;
+    gap: 20px;
+
+    &__input {
+        width: 245px;
     }
 }

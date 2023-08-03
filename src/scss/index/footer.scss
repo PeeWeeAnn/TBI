@@ -1,0 +1,39 @@
+@import "../_variables/variables";
+
+.footer {
+    display: flex;
+    align-items: center;
+    background: $color2;
+    height: 111px;
+    padding: 23px 0;
+}
+
+.footer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__text {
+        font-family: "Onest", sans-serif;
+        font-size: 16px;
+        line-height: normal;
+        color: $color5;
+    }
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}

@@ -4,6 +4,7 @@
 @import "./index/banner-main";
 @import "./index/about";
 @import "./index/connection";
+@import "./index/footer";
 
 html {
     overflow-x: hidden;
@@ -48,13 +49,14 @@ button {
 }
 
 input {
-    height: 28px;
+    height: 26px;
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px solid $color6;
     background: $white;
     font-size: 14px;
     color: $color3;
+    outline: none;
 }
 
 ._container {
