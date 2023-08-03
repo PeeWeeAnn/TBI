@@ -1,0 +1,97 @@
+@import "../_variables/variables";
+
+.banner-main {
+    margin: 0 0 30px 0;
+}
+
+.banner-main-wrapper {
+    height: 421px;
+    display: flex;
+    gap: 30px;
+}
+
+.banner-main-description {
+    max-width: 385px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    background-image: url("../img/main/books.png");
+    background-repeat: no-repeat;
+    border-radius: 30px;
+
+    &__header {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 110%;
+        color: $color4;
+    }
+
+    &__text {
+        line-height: 120%;
+        color: $color6;
+    }
+}
+
+.banner-main-text {
+    position: relative;
+    width: 57%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 30px;
+    background: $white;
+    padding: 0 80px 0 80px;
+
+    &__quote {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 140%;
+        color: $color2;
+    }
+
+    &__quote span {
+        background: $color7;
+    }
+
+    &__quote img {
+        position: absolute;
+    }
+}
+
+.banner-main-text-modal {
+    display: flex;
+
+    &__block {
+        display: flex;
+        gap: 10px;
+        padding: 10px 16px;
+        font-size: 16px;
+        color: $color4;
+        background: $color2;
+        box-shadow: 0px 10px 15px 0px rgba(0, 37, 77, 0.2);
+    }
+}
+
+.modal-block {
+    &__text {
+        color: $color4;
+    }
+}
+
+.modal-block-first {
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-block-second {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-block-third {
+    border-radius: 0 10px 10px 0;
+}
