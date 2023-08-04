@@ -1,4 +1,5 @@
 @import "./_variables/variables";
+@import "./_variables/mixins";
 
 @import "./index/header";
 @import "./index/banner-main";
@@ -60,6 +61,30 @@ input {
 }
 
 ._container {
-    width: 1110px;
+    max-width: 68.75%;
     margin: 0 auto;
+
+    @include _1600 {
+        max-width: 69.375%;
+    }
+
+    @include _1440 {
+        max-width: 92%;
+    }
+
+    @include _1000 {
+        max-width: 92.187%;
+    }
+
+    @include _768 {
+        max-width: 93.75%;
+    }
+
+    @include _576 {
+        max-width: 91.666%;
+    }
+
+    @include _480 {
+        max-width: 94.444%;
+    }
 }

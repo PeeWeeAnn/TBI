@@ -1,17 +1,20 @@
 @import "../_variables/variables";
+@import "../_variables/mixins";
 
 .footer {
-    display: flex;
-    align-items: center;
     background: $color2;
-    height: 111px;
     padding: 23px 0;
 }
 
 .footer-wrapper {
+    height: 111px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include _1000 {
+        justify-content: center;
+    }
 }
 
 .footer-logo {
@@ -30,10 +33,18 @@
         font-size: 16px;
         line-height: normal;
         color: $color5;
+
+        @include _576 {
+            font-size: 14px;
+        }
     }
 }
 
 .footer-social {
     display: flex;
     gap: 20px;
+
+    @include _1000 {
+        display: none;
+    }
 }

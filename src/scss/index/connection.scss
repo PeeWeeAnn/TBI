@@ -1,4 +1,5 @@
 @import "../_variables/variables";
+@import "../_variables/mixins";
 
 .connection {
     margin: 0 0 110px 0;
@@ -8,10 +9,23 @@
     height: 379px;
     display: flex;
     gap: 30px;
+
+    @include _1440 {
+        gap: 20px;
+    }
+
+    @include _1000 {
+        height: 435px;
+    }
+
+    @include _768 {
+        height: 100%;
+        flex-direction: column-reverse;
+    }
 }
 
 .connection-contacts {
-    min-width: 365px;
+    width: calc(33.713% - 60px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -19,12 +33,42 @@
     justify-content: center;
     border-radius: 30px;
     background: $white;
-    padding: 30px 40px;
+    padding: 30px;
     line-height: normal;
+
+    @include _1600 {
+        width: calc(40% - 60px);
+    }
+
+    @include _1440 {
+        width: calc(50% - 60px);
+    }
+
+    @include _768 {
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
+    &__header {
+        font-size: 32px;
+
+        @include _480 {
+            font-size: 24px;
+        }
+    }
 
     &__social {
         display: flex;
         gap: 20px;
+    }
+
+    &__text {
+        font-size: 15px;
+
+        @include _1000 {
+            width: 200px;
+            text-align: center;
+        }
     }
 }
 
@@ -36,7 +80,7 @@
 }
 
 .connection-contact-form {
-    min-width: 575px;
+    width: calc(64.02% - 60px);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -47,12 +91,40 @@
     background: $color2;
     box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
 
+    @include _1600 {
+        width: calc(60% - 60px);
+    }
+
+    @include _1440 {
+        width: calc(50% - 60px);
+    }
+
+    @include _768 {
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
     &__header {
         color: $color4;
+
+        @include _768 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 24px;
+        }
+    }
+
+    &__text {
+        @include _1000 {
+            font-size: 15px;
+        }
     }
 }
 
 .form-fields {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -63,6 +135,7 @@
         font-family: "Rubik", sans-serif;
         font-size: 14px;
         outline: none;
+        border-radius: 10px;
     }
 
     &__submit {
@@ -78,7 +151,15 @@
     display: flex;
     gap: 20px;
 
+    @include _1000 {
+        flex-direction: column;
+    }
+
     &__input {
-        width: 245px;
+        width: 100%;
+
+        @include _1000 {
+            width: calc(100% - 32px);
+        }
     }
 }

@@ -1,18 +1,31 @@
 @import "../_variables/variables";
+@import "../_variables/mixins";
 
 .about {
     margin: 0 0 30px 0;
+
+    @include _1440 {
+        margin: 0 0 20px 0;
+    }
 
     &__header {
         font-size: 40px;
         font-weight: 500;
         line-height: 150%;
         color: $color1;
+
+        @include _768 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 24px;
+        }
     }
 }
 
 .about-wrapper {
-    width: 94.6%;
+    width: calc(100% - 60px);
     height: 392px;
     display: flex;
     flex-direction: column;
@@ -22,6 +35,24 @@
     border-radius: 30px;
     box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
     background: $white;
+
+    @include _1000 {
+        height: 446px;
+    }
+
+    @include _768 {
+        padding: 30px;
+        height: 500px;
+    }
+
+    @include _576 {
+        padding: 30px 20px;
+        width: calc(100% - 40px);
+    }
+
+    @include _480 {
+        height: 585px;
+    }
 }
 
 .about-block {
@@ -30,7 +61,19 @@
     gap: 30px;
     width: 75%;
 
+    @include _1440 {
+        width: 90%;
+    }
+
+    @include _768 {
+        max-width: 95%;
+    }
+
     &__text {
         text-align: center;
+
+        @include _768 {
+            font-size: 16px;
+        }
     }
 }

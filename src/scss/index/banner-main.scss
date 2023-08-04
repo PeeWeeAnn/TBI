@@ -1,17 +1,32 @@
 @import "../_variables/variables";
+@import "../_variables/mixins";
 
 .banner-main {
     margin: 0 0 30px 0;
+
+    @include _1440 {
+        margin: 0 0 20px 0;
+    }
 }
 
 .banner-main-wrapper {
     height: 421px;
     display: flex;
     gap: 30px;
+
+    @include _1440 {
+        height: 330px;
+        gap: 20px;
+    }
+
+    @include _768 {
+        flex-direction: column;
+        height: 100%;
+    }
 }
 
 .banner-main-description {
-    min-width: 385px;
+    width: calc(33.713% - 60px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -20,24 +35,55 @@
     padding: 0 30px;
     background-image: url("../img/main/books.png");
     background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 30px;
+
+    @include _1600 {
+        width: calc(40% - 60px);
+    }
+
+    @include _1440 {
+        width: calc(50% - 60px);
+    }
+
+    @include _768 {
+        width: calc(100% - 60px);
+        height: 268px;
+    }
+
+    @include _480 {
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
 
     &__header {
         font-size: 40px;
         font-weight: 500;
         line-height: 110%;
         color: $color4;
+
+        @include _1440 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 24px;
+        }
     }
 
     &__text {
         line-height: 120%;
         color: $color6;
+
+        @include _768 {
+            font-size: 16px;
+        }
     }
 }
 
 .banner-main-text {
     position: relative;
-    min-width: 475px;
+    width: calc(64.02% - 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,13 +91,54 @@
     gap: 30px;
     border-radius: 30px;
     background: $white;
-    padding: 0 80px 0 80px;
+    padding: 0 50px;
+
+    @include _1600 {
+        width: calc(60% - 100px);
+    }
+
+    @include _1440 {
+        width: calc(50% - 100px);
+    }
+
+    @include _1000 {
+        padding: 0 30px;
+        width: calc(50% - 60px);
+    }
+
+    @include _768 {
+        width: calc(100% - 60px);
+        height: 268px;
+    }
+
+    @include _480 {
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
 
     &__quote {
+        width: 465px;
         font-size: 20px;
         font-weight: 400;
         line-height: 140%;
         color: $color2;
+
+        @include _1440 {
+            width: 350px;
+        }
+
+        @include _1000 {
+            font-size: 16px;
+            width: 276px;
+        }
+
+        @include _768 {
+            width: 376px;
+        }
+
+        @include _480 {
+            width: 300px;
+        }
     }
 
     &__quote span {
@@ -74,6 +161,33 @@
         color: $color4;
         background: $color2;
         box-shadow: 0px 10px 15px 0px rgba(0, 37, 77, 0.2);
+
+        @include _1440 {
+            font-size: 14px;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        @include _1000 {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        @include _768 {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        @include _480 {
+            font-size: 12px;
+            padding: 5px;
+        }
+    }
+
+    &__block img {
+        @include _1000 {
+            width: 15px;
+        }
     }
 }
 
