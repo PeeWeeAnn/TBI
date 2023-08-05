@@ -1,0 +1,105 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.authorization {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    background: $white;
+    padding: 120px 0;
+}
+
+.authorization-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 316px;
+    padding: 30px 40px;
+    background: $color6;
+    box-shadow: 0px 4px 20px 0px rgba(109, 166, 228, 0.3);
+    border-radius: 16px;
+
+    @include _480 {
+        padding: 30px 20px;
+        width: 260px;
+    }
+}
+
+.authorization-heading-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__header {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
+        color: $color1;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        background: transparent;
+    }
+}
+
+.authorization-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__button {
+        height: 48px;
+        padding: 10px 20px;
+        background: $color1;
+        color: $white;
+        font-family: "Onest", sans-serif;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+}
+
+.authorization-form-inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__block {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__button {
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        background: transparent;
+        padding: 0;
+    }
+
+    &__link {
+        color: $color1;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+.authorization-form-block {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+
+    &__text {
+        color: $color8;
+    }
+
+    &__link {
+        color: $color1;
+    }
+}

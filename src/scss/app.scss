@@ -7,13 +7,20 @@
 @import "./index/connection";
 @import "./index/footer";
 
+@import "./authorization/header-blue";
+@import "./authorization/authorization";
+
+@import "./library/library";
+
 html {
     overflow-x: hidden;
     margin-right: calc(-1 * (100vw - 100%));
     // overflow-y: hidden;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     font-family: "Rubik", sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -58,6 +65,12 @@ input {
     font-size: 14px;
     color: $color3;
     outline: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 ._container {

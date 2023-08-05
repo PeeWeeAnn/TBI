@@ -33,9 +33,3 @@
         @content;
     }
 }
-
-@mixin _360 {
-    @media (max-width: 360px) {
-        @content;
-    }
-}
