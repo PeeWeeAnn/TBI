@@ -1,2 +1,86 @@
 @import "../_variables/variables";
 @import "../_variables/mixins";
+
+.library {
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.library-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 50px 0 110px 0;
+}
+
+.library-heading-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__header {
+        color: $color2;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 175px;
+        height: 48px;
+        border-radius: 10px;
+        background: $color1;
+        color: $color4;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.library-list-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 255px);
+    justify-content: space-between;
+    grid-gap: 30px;
+
+    @include _1000 {
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fill, 210px);
+    }
+}
+
+.library-list-books a {
+    width: 255px;
+
+    @include _1000 {
+        width: 210px;
+    }
+}
+
+.library-list-books-book {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.library-list-books-book-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &__name {
+        font-family: "Onest", sans-serif;
+        font-size: 18px;
+        line-height: 120%;
+        color: $color2;
+    }
+
+    &__author {
+        font-family: "Onest", sans-serif;
+        font-size: 14px;
+        line-height: 150%;
+        color: $color3;
+    }
+}
