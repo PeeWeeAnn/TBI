@@ -14,7 +14,11 @@
 
 @import "./book-card/book-card";
 
+@import "./reader/reader";
+
 @import "./components/pagination";
+@import "./components/reader-buttons";
+@import "./components/reader-range";
 
 html {
     overflow-x: hidden;

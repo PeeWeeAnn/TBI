@@ -1,0 +1,33 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.base-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    height: 44px;
+    border-radius: 8px;
+    background: $color1;
+    color: $white;
+    font-size: 14px;
+    line-height: normal;
+
+    span {
+        @include _768 {
+            display: none;
+        }
+    }
+
+    &.white {
+        background: $white;
+        color: $color2;
+    }
+}
+
+.base-button-hidden {
+    @include _576 {
+        display: none;
+    }
+}

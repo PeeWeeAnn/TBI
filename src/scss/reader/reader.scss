@@ -1,0 +1,77 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.reader {
+    flex: 1 1 auto;
+    background: $white;
+    padding: 30px 0;
+}
+
+.reader-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reader-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include _576 {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        width: 85px;
+        gap: 10px;
+        color: $color1;
+    }
+
+    &__book-name {
+        color: $color8;
+        font-size: 16px;
+        line-height: normal;
+    }
+}
+
+.reader-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $color6;
+    border-radius: 8px;
+    padding: 10px;
+
+    @include _480 {
+        gap: 10px;
+    }
+
+    &__rectangle-button {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__square-button {
+        display: flex;
+        gap: 20px;
+
+        @include _480 {
+            gap: 10px;
+        }
+    }
+
+    &__zoom-button {
+        display: flex;
+        gap: 5px;
+
+        @include _480 {
+            gap: 10px;
+        }
+    }
+}
