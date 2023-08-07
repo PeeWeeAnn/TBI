@@ -1,0 +1,182 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.book-card {
+    display: flex;
+    flex: 1 1 auto;
+    background: $white;
+    padding: 50px 0 110px 0;
+
+    @include _480 {
+        padding: 30px 0 110px 0;
+    }
+
+    &__back {
+        display: flex;
+        gap: 10px;
+        font-size: 16px;
+        color: $color1;
+        align-items: center;
+        width: 85px;
+    }
+}
+
+.book-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.book-card-description {
+    display: flex;
+    gap: 30px;
+
+    @include _576 {
+        flex-direction: column;
+    }
+}
+
+.book-card-description-image {
+    @include _576 {
+        display: flex;
+        gap: 20px;
+    }
+
+    @include _480 {
+        flex-direction: column;
+    }
+
+    &__cover {
+        @include _1440 {
+            width: 210px;
+        }
+
+        @include _480 {
+            width: 100%;
+        }
+    }
+}
+
+.description-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__text {
+        color: $color3;
+        font-size: 16px;
+        line-height: 150%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.description-block-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include _576 {
+        display: none;
+    }
+
+    &__name {
+        color: $color2;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: normal;
+
+        @include _576 {
+            font-size: 32px;
+        }
+    }
+
+    &__author {
+        color: $color3;
+        font-family: "Onest", sans-serif;
+        font-size: 18px;
+        line-height: 150%;
+    }
+}
+
+.description-block-heading-576 {
+    display: none;
+
+    @include _576 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.description-block-control {
+    display: flex;
+    gap: 30px;
+
+    @include _1000 {
+        display: none;
+    }
+
+    &__read {
+        width: 122px;
+        height: 28px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: $color1;
+        color: $color4;
+        font-size: 14px;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__download {
+        width: 122px;
+        height: 28px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background: #deedff;
+        color: $color1;
+        font-size: 14px;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    &__add {
+        color: $color1;
+        font-size: 14px;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+.description-block-control-1000 {
+    display: none;
+
+    @include _1000 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    :nth-child(3) {
+        width: 100%;
+        font-size: 12px;
+
+        @include _480 {
+            font-size: 14px;
+        }
+    }
+}
+
+.description-block-control-1000 a {
+    width: calc(100% - 40px);
+}

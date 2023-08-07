@@ -16,4 +16,10 @@
     :last-child {
         rotate: 180deg;
     }
+
+    .pagination-list-item-hidden {
+        @include _576 {
+            display: none;
+        }
+    }
 }

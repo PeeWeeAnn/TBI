@@ -50,7 +50,7 @@
     align-items: center;
     gap: 40px;
 
-    @include _768 {
+    @include _1000 {
         display: none;
     }
 

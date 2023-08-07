@@ -18,10 +18,19 @@
     justify-content: space-between;
     align-items: center;
 
+    @include _576 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     &__header {
         color: $color2;
         font-size: 40px;
         font-weight: 500;
+
+        @include _576 {
+            font-size: 32px;
+        }
     }
 
     &__button {
@@ -36,6 +45,10 @@
         color: $color4;
         font-size: 14px;
         padding: 10px;
+
+        @include _576 {
+            width: 100%;
+        }
     }
 }
 
@@ -43,11 +56,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 255px);
     justify-content: space-between;
-    grid-gap: 30px;
+    gap: 50px 30px;
 
     @include _1000 {
-        grid-gap: 20px;
+        gap: 50px 20px;
         grid-template-columns: repeat(auto-fill, 210px);
+    }
+
+    @include _480 {
+        grid-template-columns: repeat(auto-fill, 160px);
     }
 }
 
@@ -56,6 +73,10 @@
 
     @include _1000 {
         width: 210px;
+    }
+
+    @include _480 {
+        width: 160px;
     }
 }
 
@@ -75,6 +96,10 @@
         font-size: 18px;
         line-height: 120%;
         color: $color2;
+
+        @include _480 {
+            font-size: 16px;
+        }
     }
 
     &__author {
@@ -82,5 +107,9 @@
         font-size: 14px;
         line-height: 150%;
         color: $color3;
+
+        @include _480 {
+            font-size: 12px;
+        }
     }
 }
