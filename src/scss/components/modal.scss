@@ -1,0 +1,213 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(2, 49, 100, 0.5);
+    display: none;
+}
+
+.modal-content-wrapper {
+    padding: 30px 30px 40px 30px;
+    max-width: calc(445px - 60px);
+    background-color: $color6;
+    margin: 250px auto 0;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include _480 {
+        padding: 30px 20px 40px 20px;
+        max-width: calc(340px - 40px);
+    }
+}
+
+.modal-notes-wrapper {
+    padding: 30px 30px 40px 30px;
+    max-width: calc(730px - 60px);
+    background-color: $color6;
+    margin: 250px auto 0;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include _768 {
+        max-width: calc(90% - 60px);
+        margin: 200px auto 0;
+    }
+
+    @include _576 {
+        padding: 30px 20px 40px 20px;
+    }
+}
+
+.modal-heading {
+    display: flex;
+    justify-content: space-between;
+
+    &__header {
+        color: $color1;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.modal-content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    :first-child {
+        border-radius: 6px 6px 0 0;
+    }
+
+    :last-child {
+        border-radius: 0 0 6px 6px;
+    }
+}
+
+.modal-content-body-item {
+    display: flex;
+    height: 22px;
+    padding: 5px 15px;
+    background: $white;
+
+    &__large {
+        color: $color2;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+    }
+
+    &__medium {
+        color: $color3;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    &__small {
+        color: $color3;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 150%;
+    }
+}
+
+.modal-notes-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-notes-body-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    background: $white;
+    border-radius: 6px;
+
+    &__comment {
+        color: $color8;
+        font-size: 16px;
+        line-height: 150%;
+
+        @include _576 {
+            display: none;
+        }
+    }
+}
+
+.body-item-note {
+    display: flex;
+    gap: 20px;
+
+    @include _576 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__text p {
+        color: $color2;
+        font-size: 16px;
+        line-height: 150%;
+
+        @include _576 {
+            font-size: 14px;
+        }
+    }
+
+    &__comment {
+        display: none;
+
+        @include _576 {
+            display: block;
+            color: $color8;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    }
+}
+
+.body-item-note-time {
+    display: flex;
+    flex-direction: column;
+
+    @include _576 {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    &__date {
+        color: $color2;
+        font-size: 14px;
+        line-height: 150%;
+    }
+
+    &__hour {
+        color: $color8;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+
+.body-item-note-buttons {
+    display: flex;
+    gap: 5px;
+
+    @include _576 {
+        gap: 20px;
+    }
+
+    &__hide {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border-radius: 6px;
+        background: #d6e9ff;
+    }
+
+    &__delete {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border-radius: 6px;
+        background: #ffdadd;
+    }
+}
