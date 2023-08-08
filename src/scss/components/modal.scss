@@ -143,12 +143,6 @@
     background: $white;
     border-radius: 6px;
 
-    &__hidden {
-        @include _576 {
-            display: none;
-        }
-    }
-
     &__comment {
         color: $color8;
         font-size: 16px;
