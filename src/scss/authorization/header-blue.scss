@@ -76,6 +76,12 @@
     &__link {
         color: $white;
     }
+
+    &__profile-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 .header-blue-nav-list li {
@@ -139,7 +145,7 @@
 
     li {
         margin: 36px 0;
-    }
+      }
 
     &-list {
         .header-blue-nav {

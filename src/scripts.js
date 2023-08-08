@@ -26,8 +26,43 @@ for (let closeButton of closeButtons) {
 const navBurger = document.querySelector('.burger-menu')
 const burgerButton = document.querySelectorAll('.header-blue-nav__burger-button')
 
+let visibilityFlag = false;
 for(let button of burgerButton) {
 	button.onclick = function () {
-		navBurger.classList.toggle('burger-menu--active')
+		visibilityFlag = !visibilityFlag
+		if(visibilityFlag) {
+			document.body.style.overflow = 'hidden';
+			navBurger.classList.add('burger-menu--active')
+		}
+		else {
+			document.body.style.overflow = '';
+			navBurger.classList.remove('burger-menu--active')
+		}
+	}
+}
+
+const fullScreenButton = document.querySelector('.base-button-hidden')
+
+let fullScreenFlag = false;
+fullScreenButton.onclick = function () {
+	fullScreenFlag = !fullScreenFlag
+	if(fullScreenFlag) {
+		if (document.body.mozRequestFullScreen) {
+	        // This is how to go into fullscren mode in Firefox
+	        // Note the "moz" prefix, which is short for Mozilla.
+	        document.body.mozRequestFullScreen();
+	    } else if (document.body.webkitRequestFullScreen) {
+	        // This is how to go into fullscreen mode in Chrome and Safari
+	        // Both of those browsers are based on the Webkit project, hence the same prefix.
+	        document.body.webkitRequestFullScreen();
+	    }
+	} else {
+		if (document.cancelFullScreen) {
+			document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+        	document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+        	document.webkitCancelFullScreen();
+        }
 	}
 }
