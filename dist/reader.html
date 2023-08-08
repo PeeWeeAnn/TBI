@@ -201,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-notes-body__item modal-notes-body-item">
+                    <div class="modal-notes-body__item modal-notes-body-item__hidden">
                         <div class="modal-notes-body-item__note body-item-note">
                             <div class="body-item-note__date body-item-note-time">
                                 <span class="body-item-note-time__date">
@@ -227,6 +227,31 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modalAddNote" class="modal modal-add-note">
+            <div class="modal-add-note-wrapper">
+                <div class="modal__heading modal-heading">
+                    <h3 class="modal-heading__header">
+                        Добавить заметку
+                    </h3>
+                    <button class="modal-heading__close">
+                        <img src="../src/img/icons/close.svg" alt="">
+                    </button>
+                </div>
+                <div class="modal-add-note__body modal-add-note-body">
+                    <div class="modal-add-note-body__quote">
+                        <span>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.
+                        </span>
+                    </div>
+                    <input class="modal-add-note-body__comment" placeholder="Комментарий к заметке" type="text">
+                    <button class="modal-add-note-body__button">
+                        Сохранить заметку
+                    </button>
                 </div>
             </div>
         </section>
@@ -276,7 +301,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="reader__text">
+                    <div id="openModalAddNote" class="reader__text">
                         <img src="../src/img/reader/text.png" alt="">
                     </div>
                     <div class="reader__progress">
