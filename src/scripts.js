@@ -33,13 +33,13 @@ for (let closeButton of closeButtons) {
 	}
 }
 
-const navBurger = document.querySelector(".burger-menu")
-const burgerButton = document.querySelectorAll(
-	".header-blue-nav__burger-button",
-)
+const navBurger = document.querySelector('.burger-menu')
+const burgerButton = document.querySelectorAll('.header-blue-nav__burger-button')
+let visibilityFlag = false;
 
-let visibilityFlag = false
-for (let button of burgerButton) {
+for(let button of burgerButton) {
+	const navBurger = document.querySelector(".burger-menu")
+	const burgerButton = document.querySelectorAll(".header-blue-nav__burger-button")
 	button.onclick = function () {
 		visibilityFlag = !visibilityFlag
 		if (visibilityFlag) {
@@ -52,28 +52,55 @@ for (let button of burgerButton) {
 	}
 }
 
-const fullScreenButton = document.querySelector(".base-button-hidden")
+const fullScreenButton = document.querySelector('.base-button-hidden')
+let fullScreenFlag = false;
 
-let fullScreenFlag = false
-fullScreenButton.onclick = function () {
-	fullScreenFlag = !fullScreenFlag
-	if (fullScreenFlag) {
-		if (document.body.mozRequestFullScreen) {
-			// This is how to go into fullscren mode in Firefox
-			// Note the "moz" prefix, which is short for Mozilla.
-			document.body.mozRequestFullScreen()
-		} else if (document.body.webkitRequestFullScreen) {
-			// This is how to go into fullscreen mode in Chrome and Safari
-			// Both of those browsers are based on the Webkit project, hence the same prefix.
-			document.body.webkitRequestFullScreen()
+if(fullScreenButton) {
+	fullScreenButton.onclick = function () {
+		fullScreenFlag = !fullScreenFlag
+		if(fullScreenFlag) {
+			if (document.body.mozRequestFullScreen) {
+		        // This is how to go into fullscren mode in Firefox
+		        // Note the "moz" prefix, which is short for Mozilla.
+		        document.body.mozRequestFullScreen();
+		    } else if (document.body.webkitRequestFullScreen) {
+		        // This is how to go into fullscreen mode in Chrome and Safari
+		        // Both of those browsers are based on the Webkit project, hence the same prefix.
+		        document.body.webkitRequestFullScreen();
+		    }
+		} else {
+			if (document.cancelFullScreen) {
+				document.cancelFullScreen();
+	        } else if (document.mozCancelFullScreen) {
+	        	document.mozCancelFullScreen();
+	        } else if (document.webkitCancelFullScreen) {
+	        	document.webkitCancelFullScreen();
+	        }
 		}
-	} else {
-		if (document.cancelFullScreen) {
-			document.cancelFullScreen()
-		} else if (document.mozCancelFullScreen) {
-			document.mozCancelFullScreen()
-		} else if (document.webkitCancelFullScreen) {
-			document.webkitCancelFullScreen()
+	}
+}
+
+const addButtons = document.querySelectorAll('.description-block-control__add')
+let addedFlag = false
+
+for(let addButton of addButtons) {
+	addButton.onclick = function (e) {
+		addedFlag = !addedFlag
+		if(addedFlag) {
+			e.preventDefault()
+			addButton.style.display = 'none'
+			const removeButtons = document.querySelectorAll('.description-block-control__remove')
+			for(let removeButton of removeButtons) {
+				removeButton.style.display = 'flex'
+			}
+		}
+		else {
+			e.preventDefault()
+			addButton.style.display = 'block'
+			const removeButtons = document.querySelectorAll('.description-block-control__remove')
+			for(let removeButton of removeButtons) {
+				removeButton.style.display = 'flex'
+			}
 		}
 	}
 }
