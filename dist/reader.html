@@ -47,6 +47,28 @@
             </div>
         </header>
 
+        <section id="modalLoading" class="modal modal-loading">
+            <div class="modal-loading-wrapper">
+                <div class="modal-loading__heading modal-loading-heading">
+                    <h3 class="modal-loading-heading__header">
+                        Загрузка
+                    </h3>
+                </div>
+                <div class="modal-loading__body modal-loading-body">
+                    <div class="modal-loading-body__animation modal-loading-body-animation">
+                        <svg class="spinner" viewBox="0 0 50 50">
+                            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                        </svg>
+                    </div>
+                    <div class="modal-loading-body__text modal-loading-body-text">
+                        <span>
+                            Идет загрузка, пожалуйста, не закрывайте это окно
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="modalContent" class="modal modal-content">
             <div class="modal-content-wrapper">
                 <div class="modal__heading modal-heading">
@@ -256,6 +278,56 @@
             </div>
         </section>
 
+        <section id="popup" class="popup">
+            <div class="popup-wrapper">
+                <form class="popup__form popup-form" action="">
+                    <div class="popup-form__font popup-form-font">
+                        <select class="popup-form-font__select" name="fonts">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Roboto">Roboto</option>
+                        </select>
+                    </div>
+                    <div class="popup-form__font popup-form-font">
+                        <select class="popup-form-font__select" name="alphabet">
+                            <option value="Кириллица">Кириллица</option>
+                            <option value="Латиница">Латиница</option>
+                            <option value="Арабский">Арабский</option>
+                        </select>
+                    </div>
+                    <div class="popup-form__alignment popup-form-alignment">
+                        <span>
+                            Выравнивание:
+                        </span>
+                        <div class="popup-form-alignment__buttons popup-form-alignment-buttons">
+                            <button class="popup-form-alignment-buttons__button">
+                                <img src="../src/img/icons/textalign-justifycenter.svg" alt="">
+                            </button>
+                            <button class="popup-form-alignment-buttons__button">
+                                <img src="../src/img/icons/textalign-justifyleft.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="popup-form__interval popup-form-interval">
+                        <span>
+                            Интервал:
+                        </span>
+                        <div class="popup-form-interval__buttons popup-form-interval-buttons">
+                            <button class="popup-form-interval-buttons__button">
+                                <img src="../src/img/icons/textalign-justifycenter-interval.svg" alt="">
+                            </button>
+                            <button class="popup-form-interval-buttons__button">
+                                <img src="../src/img/icons/textalign-justifycenter-interval2.svg" alt="">
+                            </button>
+                            <button class="popup-form-interval-buttons__button">
+                                <img src="../src/img/icons/textalign-justifycenter.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <section class="reader">
             <div class="_container">
                 <div class="reader-wrapper">
@@ -282,7 +354,7 @@
                             </button>
                         </div>
                         <div class="reader-control__square-button">
-                            <button class="base-button">
+                            <button id="popupButton" class="base-button">
                                 <img src="../src/img/icons/text.svg" alt="">
                             </button>
                             <div class="reader-control__zoom-button">

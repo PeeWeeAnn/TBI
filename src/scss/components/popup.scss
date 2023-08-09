@@ -1,0 +1,97 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.popup {
+    width: calc(268px - 40px);
+    display: none;
+    position: fixed;
+    top: 42%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 30px;
+    background: $color6;
+    box-shadow: 0px 4px 20px 0px rgba(109, 166, 228, 0.3);
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-form-font {
+    width: 100%;
+    height: 44px;
+    position: relative;
+    display: inline-block;
+
+    &__select {
+        width: 100%;
+        height: 44px;
+        padding: 10px 16px;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        background: $white;
+        appearance: none;
+    }
+}
+
+.popup-form-font::after {
+    content: "";
+    padding: 8px;
+    font-size: 12px;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    z-index: 1;
+    text-align: center;
+    width: 10%;
+    height: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+    background: url("../img/icons/arrow-down.svg") no-repeat;
+}
+
+.popup-form-alignment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color2;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.popup-form-alignment-buttons {
+    display: flex;
+    gap: 10px;
+
+    &__button {
+        height: 44px;
+        border-radius: 8px;
+        background: $white;
+        padding: 10px;
+    }
+}
+
+.popup-form-interval {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color2;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.popup-form-interval-buttons {
+    display: flex;
+    gap: 5px;
+
+    &__button {
+        height: 44px;
+        border-radius: 8px;
+        background: $white;
+        padding: 10px;
+    }
+}

@@ -5,23 +5,34 @@ const modalNotes = document.getElementById("modalNotes")
 const openModalNotes = document.getElementById("openModalNotes")
 const modalAddNote = document.getElementById("modalAddNote")
 const openModalAddNote = document.getElementById("openModalAddNote")
+const modalLoading = document.getElementById("modalLoading")
+const openModalLoading = document.getElementById("openModalLoading")
 const closeButtons = document.querySelectorAll(".modal-heading__close")
 
 // При нажатии на кнопки модалок, отобразить модальное окно
-if (openModalContent && openModalNotes && openModalAddNote) {
+if (openModalContent) {
 	openModalContent.onclick = function () {
 		modalContent.style.display = "block"
 		document.body.style.overflow = "hidden"
 	}
+}
+if (openModalNotes) {
 	openModalNotes.onclick = function () {
 		modalNotes.style.display = "block"
 		document.body.style.overflow = "hidden"
 	}
-
+}
+if (openModalAddNote) {
 	openModalAddNote.onclick = function () {
 		modalAddNote.style.display = "block"
 		document.body.style.overflow = "hidden"
 	}
+}
+if (modalLoading) {
+	modalLoading.style.display = "block"
+	setTimeout(function () {
+		modalLoading.style.display = "none"
+	}, 3000)
 }
 
 // При нажатии на кнопки закрытия, скрыть модальное окно
@@ -77,3 +88,14 @@ fullScreenButton.onclick = function () {
 		}
 	}
 }
+
+const popupButton = document.getElementById("popupButton")
+const popup = document.getElementById("popup")
+
+popupButton.addEventListener("click", () => {
+	if (popup.style.display === "none" || popup.style.display === "") {
+		popup.style.display = "block"
+	} else {
+		popup.style.display = "none"
+	}
+})

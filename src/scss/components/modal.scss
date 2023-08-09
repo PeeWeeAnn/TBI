@@ -51,6 +51,22 @@
     }
 }
 
+.modal-loading-wrapper {
+    padding: 30px;
+    max-width: calc(445px - 60px);
+    background-color: $color6;
+    margin: 250px auto 0;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include _480 {
+        padding: 30px 20px;
+        max-width: calc(340px - 40px);
+    }
+}
+
 .modal-add-note-wrapper {
     padding: 30px;
     max-width: calc(445px - 60px);
@@ -84,6 +100,18 @@
         justify-content: center;
         background: transparent;
         padding: 0;
+    }
+}
+
+.modal-loading-heading {
+    display: flex;
+    justify-content: center;
+
+    &__header {
+        color: $color1;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
     }
 }
 
@@ -265,5 +293,22 @@
         font-family: "Onest", sans-serif;
         font-size: 14px;
         line-height: normal;
+    }
+}
+
+.modal-loading-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__animation {
+        position: relative;
+        height: 95px;
+    }
+    &__text {
+        color: $color2;
+        text-align: center;
+        font-size: 16px;
+        line-height: 150%;
     }
 }
