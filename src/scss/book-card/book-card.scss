@@ -147,7 +147,8 @@
         gap: 10px;
     }
 
-    &__add {
+    &__add,
+    &__remove {
         color: $color1;
         font-size: 14px;
         line-height: normal;
@@ -155,6 +156,10 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+    }
+
+    &__remove {
+        display: none
     }
 }
 
@@ -167,13 +172,18 @@
         gap: 20px;
     }
 
-    :nth-child(3) {
+    :nth-child(3),
+    :nth-child(4) {
         width: 100%;
         font-size: 12px;
 
         @include _480 {
             font-size: 14px;
         }
+    }
+
+    :nth-child(4) {
+        display: none;
     }
 }
 
