@@ -1,6 +1,12 @@
 @import "../_variables/variables";
 @import "../_variables/mixins";
 
+.header-blue {
+    &.dark {
+        background: #002044;
+    }
+}
+
 .reader {
     flex: 1 1 auto;
     background: $white;
@@ -8,6 +14,10 @@
 
     &__text img {
         width: 100%;
+    }
+
+    &.dark {
+        background: $color2;
     }
 }
 
@@ -35,6 +45,10 @@
         width: 85px;
         gap: 10px;
         color: $color1;
+
+        &.dark {
+            filter: invert(58%) sepia(71%) saturate(333%) hue-rotate(172deg) brightness(95%) contrast(87%);
+        }
     }
 
     &__book-name {
@@ -54,6 +68,10 @@
 
     @include _480 {
         gap: 10px;
+    }
+
+    &.dark {
+        background: #002044;
     }
 
     &__rectangle-button {
@@ -77,5 +95,12 @@
         @include _480 {
             gap: 10px;
         }
+    }
+}
+
+.base-button.white {
+    &.dark {
+        color: $white;
+        background: $color2;
     }
 }

@@ -126,3 +126,13 @@ popupButton.addEventListener("click", () => {
 		popup.style.display = "none"
 	}
 })
+
+const changeThemeButton = document.querySelectorAll('.base-button.white')
+console.log(changeThemeButton[1])
+changeThemeButton[1].onclick = function () {
+	const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
+	console.log(affectedElements)
+	for(let el of affectedElements) {
+		el.classList.toggle('dark')
+	}
+}
