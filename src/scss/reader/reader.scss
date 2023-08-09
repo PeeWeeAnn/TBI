@@ -8,9 +8,24 @@
     &.sepia {
         background: #4B372C;
     }
+
+    &-nav__button {
+        &.dark {
+            color: $color2;
+            background: $white;
+        }
+
+        &.sepia {
+            color: #4B372C;
+            background: $white;
+        }
+    }
 }
 
 .footer {
+    &.dark {
+        background: #002044;
+    }
     &.sepia {
         background: #4B372C;   
     }
@@ -61,12 +76,20 @@
         &.dark {
             filter: invert(58%) sepia(71%) saturate(333%) hue-rotate(172deg) brightness(95%) contrast(87%);
         }
+
+        &.sepia {
+            filter: invert(72%) sepia(7%) saturate(100%) hue-rotate(9deg) brightness(89%) contrast(87%);
+        }
     }
 
     &__book-name {
         color: $color8;
         font-size: 16px;
         line-height: normal;
+
+        &.sepia {
+            color: #4B372C;
+        }
     }
 }
 
@@ -130,6 +153,17 @@
 
         span {
             color: $white;
+        }
+    }
+
+    &.sepia {
+        
+        img {
+            filter: invert(18%) sepia(100%) saturate(319%) hue-rotate(338deg) brightness(50%) contrast(88%);
+        }
+
+        span {
+            filter: invert(18%) sepia(100%) saturate(319%) hue-rotate(338deg) brightness(50%) contrast(88%);
         }
     }
 }

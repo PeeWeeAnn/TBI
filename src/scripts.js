@@ -147,12 +147,10 @@ popupButton.addEventListener("click", () => {
 const changeThemeButton = document.querySelectorAll(".base-button.white")
 let themeStatus = "light"
 changeThemeButton[1].onclick = function () {
-	const affectedElements = document.querySelectorAll(
-		".header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white, .base-button, .footer",
-	)
-
-	if (themeStatus == "light") {
-		themeStatus = "dark"
+	const affectedElements = document.querySelectorAll('.header-blue, .header-blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer')
+	
+	if(themeStatus == 'light') {
+		themeStatus = 'dark'
 		console.log(themeStatus)
 		changeThemeButton[1].children[0].src = "../src/img/icons/moon.svg"
 		for (let el of affectedElements) {
@@ -162,11 +160,11 @@ changeThemeButton[1].onclick = function () {
 	} else if (themeStatus == "dark") {
 		themeStatus = "sepia"
 		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = "../src/img/icons/sun.svg"
-		for (let el of affectedElements) {
-			el.style.transition = "all 600ms"
-			el.classList.remove("dark")
-			el.classList.add("sepia")
+		changeThemeButton[1].children[0].src = '../src/img/icons/sepia.svg'
+		for(let el of affectedElements) {
+			el.style.transition = 'all 600ms'
+			el.classList.remove('dark')
+			el.classList.add('sepia')
 		}
 	} else if (themeStatus == "sepia") {
 		themeStatus = "light"
