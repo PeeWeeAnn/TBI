@@ -130,21 +130,32 @@ popupButton.addEventListener("click", () => {
 const changeThemeButton = document.querySelectorAll('.base-button.white')
 let themeStatus = 'light'
 changeThemeButton[1].onclick = function () {
+	const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white, .base-button, .footer')
+	
 	if(themeStatus == 'light') {
 		themeStatus = 'dark'
 		console.log(themeStatus)
-		const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
 		changeThemeButton[1].children[0].src = '../src/img/icons/moon.svg'
 		for(let el of affectedElements) {
-			el.classList.toggle('dark')
+			el.style.transition = 'all 600ms'
+			el.classList.add('dark')
 		}
 	} else if (themeStatus == 'dark') {
-		themeStatus = 'light'
+		themeStatus = 'sepia'
 		console.log(themeStatus)
-		const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
 		changeThemeButton[1].children[0].src = '../src/img/icons/sun.svg'
 		for(let el of affectedElements) {
-			el.classList.toggle('dark')
+			el.style.transition = 'all 600ms'
+			el.classList.remove('dark')
+			el.classList.add('sepia')
+		}
+	} else if (themeStatus == 'sepia') {
+		themeStatus = 'light'
+		console.log(themeStatus)
+		changeThemeButton[1].children[0].src = '../src/img/icons/sun.svg'
+		for(let el of affectedElements) {
+			el.style.transition = 'all 600ms'
+			el.classList.remove('sepia')
 		}
 	}
 }
