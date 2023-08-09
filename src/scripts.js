@@ -128,11 +128,23 @@ popupButton.addEventListener("click", () => {
 })
 
 const changeThemeButton = document.querySelectorAll('.base-button.white')
-console.log(changeThemeButton[1])
+let themeStatus = 'light'
 changeThemeButton[1].onclick = function () {
-	const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
-	console.log(affectedElements)
-	for(let el of affectedElements) {
-		el.classList.toggle('dark')
+	if(themeStatus == 'light') {
+		themeStatus = 'dark'
+		console.log(themeStatus)
+		const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
+		changeThemeButton[1].children[0].src = '../src/img/icons/moon.svg'
+		for(let el of affectedElements) {
+			el.classList.toggle('dark')
+		}
+	} else if (themeStatus == 'dark') {
+		themeStatus = 'light'
+		console.log(themeStatus)
+		const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white')
+		changeThemeButton[1].children[0].src = '../src/img/icons/sun.svg'
+		for(let el of affectedElements) {
+			el.classList.toggle('dark')
+		}
 	}
 }
