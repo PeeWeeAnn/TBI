@@ -7,6 +7,8 @@ const modalAddNote = document.getElementById("modalAddNote")
 const openModalAddNote = document.getElementById("openModalAddNote")
 const modalLoading = document.getElementById("modalLoading")
 const openModalLoading = document.getElementById("openModalLoading")
+const modalDictionary = document.getElementById("modalDictionary")
+const openModalDictionary = document.getElementById("openModalDictionary")
 const closeButtons = document.querySelectorAll(".modal-heading__close")
 
 // При нажатии на кнопки модалок, отобразить модальное окно
@@ -28,6 +30,13 @@ if (openModalAddNote) {
 		document.body.style.overflow = "hidden"
 	}
 }
+if (openModalDictionary) {
+	openModalDictionary.onclick = function () {
+		modalDictionary.style.display = "block"
+		document.body.style.overflow = "hidden"
+	}
+}
+
 if (modalLoading) {
 	modalLoading.style.display = "block"
 	setTimeout(function () {
@@ -41,16 +50,21 @@ for (let closeButton of closeButtons) {
 		modalContent.style.display = "none"
 		modalNotes.style.display = "none"
 		modalAddNote.style.display = "none"
+		modalDictionary.style.display = "none"
 	}
 }
 
-const navBurger = document.querySelector('.burger-menu')
-const burgerButton = document.querySelectorAll('.header-blue-nav__burger-button')
-let visibilityFlag = false;
+const navBurger = document.querySelector(".burger-menu")
+const burgerButton = document.querySelectorAll(
+	".header-blue-nav__burger-button",
+)
+let visibilityFlag = false
 
-for(let button of burgerButton) {
+for (let button of burgerButton) {
 	const navBurger = document.querySelector(".burger-menu")
-	const burgerButton = document.querySelectorAll(".header-blue-nav__burger-button")
+	const burgerButton = document.querySelectorAll(
+		".header-blue-nav__burger-button",
+	)
 	button.onclick = function () {
 		visibilityFlag = !visibilityFlag
 		if (visibilityFlag) {
@@ -63,54 +77,57 @@ for(let button of burgerButton) {
 	}
 }
 
-const fullScreenButton = document.querySelector('.base-button-hidden')
-let fullScreenFlag = false;
+const fullScreenButton = document.querySelector(".base-button-hidden")
+let fullScreenFlag = false
 
-if(fullScreenButton) {
+if (fullScreenButton) {
 	fullScreenButton.onclick = function () {
 		fullScreenFlag = !fullScreenFlag
-		if(fullScreenFlag) {
+		if (fullScreenFlag) {
 			if (document.body.mozRequestFullScreen) {
-		        // This is how to go into fullscren mode in Firefox
-		        // Note the "moz" prefix, which is short for Mozilla.
-		        document.body.mozRequestFullScreen();
-		    } else if (document.body.webkitRequestFullScreen) {
-		        // This is how to go into fullscreen mode in Chrome and Safari
-		        // Both of those browsers are based on the Webkit project, hence the same prefix.
-		        document.body.webkitRequestFullScreen();
-		    }
+				// This is how to go into fullscren mode in Firefox
+				// Note the "moz" prefix, which is short for Mozilla.
+				document.body.mozRequestFullScreen()
+			} else if (document.body.webkitRequestFullScreen) {
+				// This is how to go into fullscreen mode in Chrome and Safari
+				// Both of those browsers are based on the Webkit project, hence the same prefix.
+				document.body.webkitRequestFullScreen()
+			}
 		} else {
 			if (document.cancelFullScreen) {
-				document.cancelFullScreen();
-	        } else if (document.mozCancelFullScreen) {
-	        	document.mozCancelFullScreen();
-	        } else if (document.webkitCancelFullScreen) {
-	        	document.webkitCancelFullScreen();
-	        }
+				document.cancelFullScreen()
+			} else if (document.mozCancelFullScreen) {
+				document.mozCancelFullScreen()
+			} else if (document.webkitCancelFullScreen) {
+				document.webkitCancelFullScreen()
+			}
 		}
 	}
 }
 
-const addButtons = document.querySelectorAll('.description-block-control__add')
+const addButtons = document.querySelectorAll(".description-block-control__add")
 let addedFlag = false
 
-for(let addButton of addButtons) {
+for (let addButton of addButtons) {
 	addButton.onclick = function (e) {
 		addedFlag = !addedFlag
-		if(addedFlag) {
+		if (addedFlag) {
 			e.preventDefault()
-			addButton.style.display = 'none'
-			const removeButtons = document.querySelectorAll('.description-block-control__remove')
-			for(let removeButton of removeButtons) {
-				removeButton.style.display = 'flex'
+			addButton.style.display = "none"
+			const removeButtons = document.querySelectorAll(
+				".description-block-control__remove",
+			)
+			for (let removeButton of removeButtons) {
+				removeButton.style.display = "flex"
 			}
-		}
-		else {
+		} else {
 			e.preventDefault()
-			addButton.style.display = 'block'
-			const removeButtons = document.querySelectorAll('.description-block-control__remove')
-			for(let removeButton of removeButtons) {
-				removeButton.style.display = 'flex'
+			addButton.style.display = "block"
+			const removeButtons = document.querySelectorAll(
+				".description-block-control__remove",
+			)
+			for (let removeButton of removeButtons) {
+				removeButton.style.display = "flex"
 			}
 		}
 	}
@@ -127,35 +144,37 @@ popupButton.addEventListener("click", () => {
 	}
 })
 
-const changeThemeButton = document.querySelectorAll('.base-button.white')
-let themeStatus = 'light'
+const changeThemeButton = document.querySelectorAll(".base-button.white")
+let themeStatus = "light"
 changeThemeButton[1].onclick = function () {
-	const affectedElements = document.querySelectorAll('.header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white, .base-button, .footer')
-	
-	if(themeStatus == 'light') {
-		themeStatus = 'dark'
+	const affectedElements = document.querySelectorAll(
+		".header-blue, .reader, .reader-navigation__back, .reader-control, .base-button.white, .base-button, .footer",
+	)
+
+	if (themeStatus == "light") {
+		themeStatus = "dark"
 		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = '../src/img/icons/moon.svg'
-		for(let el of affectedElements) {
-			el.style.transition = 'all 600ms'
-			el.classList.add('dark')
+		changeThemeButton[1].children[0].src = "../src/img/icons/moon.svg"
+		for (let el of affectedElements) {
+			el.style.transition = "all 600ms"
+			el.classList.add("dark")
 		}
-	} else if (themeStatus == 'dark') {
-		themeStatus = 'sepia'
+	} else if (themeStatus == "dark") {
+		themeStatus = "sepia"
 		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = '../src/img/icons/sun.svg'
-		for(let el of affectedElements) {
-			el.style.transition = 'all 600ms'
-			el.classList.remove('dark')
-			el.classList.add('sepia')
+		changeThemeButton[1].children[0].src = "../src/img/icons/sun.svg"
+		for (let el of affectedElements) {
+			el.style.transition = "all 600ms"
+			el.classList.remove("dark")
+			el.classList.add("sepia")
 		}
-	} else if (themeStatus == 'sepia') {
-		themeStatus = 'light'
+	} else if (themeStatus == "sepia") {
+		themeStatus = "light"
 		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = '../src/img/icons/sun.svg'
-		for(let el of affectedElements) {
-			el.style.transition = 'all 600ms'
-			el.classList.remove('sepia')
+		changeThemeButton[1].children[0].src = "../src/img/icons/sun.svg"
+		for (let el of affectedElements) {
+			el.style.transition = "all 600ms"
+			el.classList.remove("sepia")
 		}
 	}
 }
