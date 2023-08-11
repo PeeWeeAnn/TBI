@@ -12,30 +12,30 @@ const openModalDictionary = document.getElementById("openModalDictionary")
 const closeButtons = document.querySelectorAll(".modal-heading__close")
 
 // При нажатии на кнопки модалок, отобразить модальное окно
-if (openModalContent) {
-	openModalContent.onclick = function () {
-		modalContent.style.display = "block"
-		document.body.style.overflow = "hidden"
-	}
-}
-if (openModalNotes) {
-	openModalNotes.onclick = function () {
-		modalNotes.style.display = "block"
-		document.body.style.overflow = "hidden"
-	}
-}
-if (openModalAddNote) {
-	openModalAddNote.onclick = function () {
-		modalAddNote.style.display = "block"
-		document.body.style.overflow = "hidden"
-	}
-}
-if (openModalDictionary) {
-	openModalDictionary.onclick = function () {
-		modalDictionary.style.display = "block"
-		document.body.style.overflow = "hidden"
-	}
-}
+// if (openModalContent) {
+// 	openModalContent.onclick = function () {
+// 		modalContent.style.display = "block"
+// 		document.body.style.overflow = "hidden"
+// 	}
+// }
+// if (openModalNotes) {
+// 	openModalNotes.onclick = function () {
+// 		modalNotes.style.display = "block"
+// 		document.body.style.overflow = "hidden"
+// 	}
+// }
+// if (openModalAddNote) {
+// 	openModalAddNote.onclick = function () {
+// 		modalAddNote.style.display = "block"
+// 		document.body.style.overflow = "hidden"
+// 	}
+// }
+// if (openModalDictionary) {
+// 	openModalDictionary.onclick = function () {
+// 		modalDictionary.style.display = "block"
+// 		document.body.style.overflow = "hidden"
+// 	}
+// }
 
 if (modalLoading) {
 	modalLoading.style.display = "block"
@@ -136,13 +136,20 @@ for (let addButton of addButtons) {
 const popupButton = document.getElementById("popupButton")
 const popup = document.getElementById("popup")
 
-popupButton.addEventListener("click", () => {
-	if (popup.style.display === "none" || popup.style.display === "") {
-		popup.style.display = "block"
-	} else {
-		popup.style.display = "none"
+popupButton.onclick = function () {
+	if(window.innerWidth <= 480) {
+		console.log('boobs', popup)
+		popup.classList.add("popup--mobile")
+		console.log('boobs', popup.classList)
 	}
-})
+	else {
+		if (popup.style.display === "none" || popup.style.display === "") {
+			popup.style.display = "block"
+		} else {
+			popup.style.display = "none"
+		}
+	}
+}
 
 const changeThemeButton = document.querySelectorAll(".base-button.white")
 let themeStatus = "light"
