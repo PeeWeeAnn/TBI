@@ -1,0 +1,33 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.header-landing {
+    &__button {
+        display: flex;
+        height: 28px;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: $white;
+        color: $color1;
+        line-height: normal;
+    }
+}
+
+.header-landing-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 0 0 0;
+}
+
+.header-landing-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+
+    &__link {
+        color: $color4;
+    }
+}

@@ -12,30 +12,30 @@ const openModalDictionary = document.getElementById("openModalDictionary")
 const closeButtons = document.querySelectorAll(".modal-heading__close")
 
 // При нажатии на кнопки модалок, отобразить модальное окно
-// if (openModalContent) {
-// 	openModalContent.onclick = function () {
-// 		modalContent.style.display = "block"
-// 		document.body.style.overflow = "hidden"
-// 	}
-// }
-// if (openModalNotes) {
-// 	openModalNotes.onclick = function () {
-// 		modalNotes.style.display = "block"
-// 		document.body.style.overflow = "hidden"
-// 	}
-// }
-// if (openModalAddNote) {
-// 	openModalAddNote.onclick = function () {
-// 		modalAddNote.style.display = "block"
-// 		document.body.style.overflow = "hidden"
-// 	}
-// }
-// if (openModalDictionary) {
-// 	openModalDictionary.onclick = function () {
-// 		modalDictionary.style.display = "block"
-// 		document.body.style.overflow = "hidden"
-// 	}
-// }
+if (openModalContent) {
+	openModalContent.onclick = function () {
+		modalContent.style.display = "block"
+		document.body.style.overflow = "hidden"
+	}
+}
+if (openModalNotes) {
+	openModalNotes.onclick = function () {
+		modalNotes.style.display = "block"
+		document.body.style.overflow = "hidden"
+	}
+}
+if (openModalAddNote) {
+	openModalAddNote.onclick = function () {
+		modalAddNote.style.display = "block"
+		document.body.style.overflow = "hidden"
+	}
+}
+/* if (openModalDictionary) {
+	openModalDictionary.onclick = function () {
+		modalDictionary.style.display = "block"
+		document.body.style.overflow = "hidden"
+	}
+} */
 
 if (modalLoading) {
 	modalLoading.style.display = "block"
@@ -137,12 +137,11 @@ const popupButton = document.getElementById("popupButton")
 const popup = document.getElementById("popup")
 
 popupButton.onclick = function () {
-	if(window.innerWidth <= 480) {
-		console.log('boobs', popup)
+	if (window.innerWidth <= 480) {
+		console.log("boobs", popup)
 		popup.classList.add("popup--mobile")
-		console.log('boobs', popup.classList)
-	}
-	else {
+		console.log("boobs", popup.classList)
+	} else {
 		if (popup.style.display === "none" || popup.style.display === "") {
 			popup.style.display = "block"
 		} else {
@@ -154,10 +153,12 @@ popupButton.onclick = function () {
 const changeThemeButton = document.querySelectorAll(".base-button.white")
 let themeStatus = "light"
 changeThemeButton[1].onclick = function () {
-	const affectedElements = document.querySelectorAll('.header-blue, .header-blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer')
-	
-	if(themeStatus == 'light') {
-		themeStatus = 'dark'
+	const affectedElements = document.querySelectorAll(
+		".header-blue, .header-blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer",
+	)
+
+	if (themeStatus == "light") {
+		themeStatus = "dark"
 		console.log(themeStatus)
 		changeThemeButton[1].children[0].src = "../src/img/icons/moon.svg"
 		for (let el of affectedElements) {
@@ -167,11 +168,11 @@ changeThemeButton[1].onclick = function () {
 	} else if (themeStatus == "dark") {
 		themeStatus = "sepia"
 		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = '../src/img/icons/sepia.svg'
-		for(let el of affectedElements) {
-			el.style.transition = 'all 600ms'
-			el.classList.remove('dark')
-			el.classList.add('sepia')
+		changeThemeButton[1].children[0].src = "../src/img/icons/sepia.svg"
+		for (let el of affectedElements) {
+			el.style.transition = "all 600ms"
+			el.classList.remove("dark")
+			el.classList.add("sepia")
 		}
 	} else if (themeStatus == "sepia") {
 		themeStatus = "light"

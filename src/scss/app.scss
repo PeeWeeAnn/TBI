@@ -16,6 +16,12 @@
 
 @import "./reader/reader";
 
+@import "./landing-page/header-landing";
+@import "./landing-page/banner-landing";
+@import "./landing-page/our-services";
+@import "./landing-page/about-landing";
+@import "./landing-page/support";
+
 @import "./components/pagination";
 @import "./components/reader-buttons";
 @import "./components/reader-range";
@@ -111,4 +117,8 @@ input {
     @include _480 {
         max-width: 94.444%;
     }
+}
+
+.landing-page {
+    background: $color1;
 }

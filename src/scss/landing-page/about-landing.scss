@@ -1,0 +1,40 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.about-landing {
+    margin: 120px 0 0 0;
+
+    &__header {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 150%;
+        color: $white;
+    }
+}
+
+.about-landing-wrapper {
+    width: calc(100% - 80px);
+    height: 307px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
+    background: $color2;
+}
+
+.about-landing-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 75%;
+
+    &__text {
+        color: $white;
+        text-align: center;
+        font-size: 16px;
+        line-height: normal;
+    }
+}
