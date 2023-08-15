@@ -14,43 +14,43 @@ const closeButtons = document.querySelectorAll(".modal-heading__close")
 // При нажатии на кнопки модалок, отобразить модальное окно
 if (openModalContent) {
 	openModalContent.onclick = function () {
-		modalContent.style.display = "block"
+		modalContent.classList.remove("modal--hidden")
 		document.body.style.overflow = "hidden"
 	}
 }
 if (openModalNotes) {
 	openModalNotes.onclick = function () {
-		modalNotes.style.display = "block"
+		modalNotes.classList.remove("modal--hidden")
 		document.body.style.overflow = "hidden"
 	}
 }
 if (openModalAddNote) {
 	openModalAddNote.onclick = function () {
-		modalAddNote.style.display = "block"
+		modalAddNote.classList.remove("modal--hidden")
 		document.body.style.overflow = "hidden"
 	}
 }
-/* if (openModalDictionary) {
+if (openModalDictionary) {
 	openModalDictionary.onclick = function () {
-		modalDictionary.style.display = "block"
+		modalDictionary.classList.remove("modal--hidden")
 		document.body.style.overflow = "hidden"
 	}
-} */
+}
 
 if (modalLoading) {
-	modalLoading.style.display = "block"
+	modalLoading.classList.remove("modal--hidden")
 	setTimeout(function () {
-		modalLoading.style.display = "none"
+		modalLoading.classList.add("modal--hidden")
 	}, 3000)
 }
 
 // При нажатии на кнопки закрытия, скрыть модальное окно
 for (let closeButton of closeButtons) {
 	closeButton.onclick = function () {
-		modalContent.style.display = "none"
-		modalNotes.style.display = "none"
-		modalAddNote.style.display = "none"
-		modalDictionary.style.display = "none"
+		modalContent.classList.add("modal--hidden")
+		modalNotes.classList.add("modal--hidden")
+		modalAddNote.classList.add("modal--hidden")
+		modalDictionary.classList.add("modal--hidden")
 	}
 }
 
