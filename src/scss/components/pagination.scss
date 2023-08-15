@@ -4,7 +4,6 @@
 .pagination-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     &__item {
         color: $color3;
@@ -13,7 +12,11 @@
         line-height: 23px;
     }
 
-    :last-child {
+    li img {
+        cursor: pointer;
+    }
+
+    li:last-child img {
         rotate: 180deg;
     }
 
