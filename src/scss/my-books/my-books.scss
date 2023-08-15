@@ -1,0 +1,128 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.my-books {
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.my-books-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 50px 0 110px 0;
+}
+
+.my-books-heading-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include _576 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__header {
+        color: $color2;
+        font-size: 40px;
+        font-weight: 500;
+
+        @include _576 {
+            font-size: 32px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 175px;
+        height: 48px;
+        border-radius: 10px;
+        background: $color1;
+        color: $color4;
+        font-size: 14px;
+        padding: 10px;
+
+        @include _576 {
+            width: 100%;
+        }
+    }
+}
+
+.my-books-list-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 255px);
+    justify-content: space-between;
+    gap: 50px 30px;
+
+    @include _1000 {
+        gap: 50px 20px;
+        grid-template-columns: repeat(auto-fill, 210px);
+    }
+
+    @include _480 {
+        grid-template-columns: repeat(auto-fill, 160px);
+    }
+}
+
+.my-books-list-books a {
+    width: 255px;
+
+    @include _1000 {
+        width: 210px;
+    }
+
+    @include _480 {
+        width: 160px;
+    }
+}
+
+.my-books-list-books-book {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+
+    &__button {
+        position: absolute;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        width: 44px;
+        height: 44px;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+    }
+}
+
+.my-books-list-books-book-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &__name {
+        font-family: "Onest", sans-serif;
+        font-size: 18px;
+        line-height: 120%;
+        color: $color2;
+
+        @include _480 {
+            font-size: 16px;
+        }
+    }
+
+    &__author {
+        font-family: "Onest", sans-serif;
+        font-size: 14px;
+        line-height: 150%;
+        color: $color3;
+
+        @include _480 {
+            font-size: 12px;
+        }
+    }
+}
