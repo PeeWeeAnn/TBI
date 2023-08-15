@@ -55,16 +55,12 @@ for (let closeButton of closeButtons) {
 }
 
 const navBurger = document.querySelector(".burger-menu")
-const burgerButton = document.querySelectorAll(
-	".header-blue-nav__burger-button",
-)
+const burgerButton = document.querySelectorAll(".header-nav__burger-button")
 let visibilityFlag = false
 
 for (let button of burgerButton) {
 	const navBurger = document.querySelector(".burger-menu")
-	const burgerButton = document.querySelectorAll(
-		".header-blue-nav__burger-button",
-	)
+	const burgerButton = document.querySelectorAll(".header-nav__burger-button")
 	button.onclick = function () {
 		visibilityFlag = !visibilityFlag
 		if (visibilityFlag) {

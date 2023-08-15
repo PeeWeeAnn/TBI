@@ -2,63 +2,313 @@
 @import "../_variables/mixins";
 
 .header {
-    margin: 30px 0 40px 0;
+    margin: 0 0 40px 0;
 
     @include _768 {
         margin: 0 0 30px 0;
     }
-}
 
-.header-wrapper {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    &--white {
+        .header-wrapper {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-    &__text {
-        font-family: "Gilory", sans-serif;
-        font-size: 24px;
-        font-weight: 500;
-        color: $color1;
+            &__text {
+                font-family: "Gilory", sans-serif;
+                font-size: 24px;
+                font-weight: 500;
+                color: $color1;
 
-        @include _480 {
-            font-size: 16px;
+                @include _480 {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 35px;
+
+            &__button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 124px;
+                height: 48px;
+                background: $color7;
+                border-radius: 10px;
+                color: $color2;
+
+                @include _1000 {
+                    display: none;
+                }
+            }
+
+            &__burger-button {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: $color7;
+                border-radius: 10px;
+                color: $color2;
+
+                @include _1000 {
+                    display: flex;
+                }
+            }
+        }
+
+        .header-nav-list {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            @include _1000 {
+                display: none;
+            }
+
+            &__link {
+                color: $color2;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .burger-menu {
+            display: none;
+
+            &--active {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                background: #00254d;
+                width: 410px;
+                height: 100%;
+                z-index: 100;
+
+                @include _1000 {
+                    display: block;
+                    padding: 0 25px;
+                }
+
+                @include _480 {
+                    width: 310px;
+                    padding: 0 20px;
+                }
+            }
+
+            &__header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 28px 0;
+            }
+
+            &-header-logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &__text {
+                    font-family: "Gilory", sans-serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $white;
+
+                    @include _480 {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            li {
+                margin: 36px 0;
+            }
+
+            &-list {
+                .header-nav {
+                    &__burger-button {
+                        width: 124px;
+                        height: 48px;
+                    }
+                }
+            }
         }
     }
-}
 
-.header-nav {
-    display: flex;
-    gap: 35px;
-}
+    &--blue {
+        background: $color1;
 
-.header-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+        .header-wrapper {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    @include _768 {
-        display: none;
-    }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
 
-    &__link {
-        color: $color2;
-    }
+            &__text {
+                font-family: "Gilory", sans-serif;
+                font-size: 24px;
+                font-weight: 500;
+                color: $white;
 
-    &__button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 124px;
-        height: 48px;
-        background: $color7;
-        border-radius: 10px;
-        color: $color2;
+                @include _480 {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 35px;
+
+            &__button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 124px;
+                height: 48px;
+                background: $color7;
+                border-radius: 10px;
+                color: $color2;
+
+                @include _1000 {
+                    display: none;
+                }
+            }
+
+            &__burger-button {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: $color7;
+                border-radius: 10px;
+                color: $color2;
+
+                @include _1000 {
+                    display: flex;
+                }
+            }
+        }
+
+        .header-nav-list {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            @include _1000 {
+                display: none;
+            }
+
+            &__link {
+                color: $white;
+            }
+
+            &__profile-link {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        .header-nav-list li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .burger-menu {
+            display: none;
+
+            &--active {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                background: #00254d;
+                width: 410px;
+                height: 100%;
+                z-index: 100;
+
+                @include _1000 {
+                    display: block;
+                    padding: 0 25px;
+                }
+
+                @include _480 {
+                    width: 310px;
+                    padding: 0 20px;
+                }
+            }
+
+            &__header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 28px 0;
+            }
+
+            &-header-logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &__text {
+                    font-family: "Gilory", sans-serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $white;
+
+                    @include _480 {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            li {
+                margin: 36px 0;
+            }
+
+            &-list {
+                .header-nav {
+                    &__burger-button {
+                        width: 124px;
+                        height: 48px;
+                    }
+                }
+            }
+        }
     }
 }
