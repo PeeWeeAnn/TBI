@@ -111,52 +111,57 @@ for (let addButton of addButtons) {
 const popupButton = document.getElementById("popupButton")
 const popup = document.getElementById("popup")
 
-popupButton.onclick = function () {
-	if (window.innerWidth <= 480) {
-		console.log("boobs", popup)
-		popup.classList.add("popup--mobile")
-		console.log("boobs", popup.classList)
-	} else {
-		if (popup.style.display === "none" || popup.style.display === "") {
-			popup.style.display = "block"
+if(popupButton) {
+	popupButton.onclick = function () {
+		if (window.innerWidth <= 480) {
+			console.log("boobs", popup)
+			popup.classList.add("popup--mobile")
+			console.log("boobs", popup.classList)
 		} else {
-			popup.style.display = "none"
+			if (popup.style.display === "none" || popup.style.display === "") {
+				popup.style.display = "block"
+			} else {
+				popup.style.display = "none"
+			}
 		}
 	}
 }
 
+
 const changeThemeButton = document.querySelectorAll(".base-button.white")
 let themeStatus = "light"
-changeThemeButton[1].addEventListener('click', () => {
-	const affectedElements = document.querySelectorAll(
-		".header--blue, .header--blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer",
-	)
-
-	for (let el of affectedElements) {
-		el.style.transition = "all 600ms"
-	}
-
-	if (themeStatus == "light") {
-		themeStatus = "dark"
-		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = "../src/img/icons/moon.svg"
+if(changeThemeButton[1]) {
+	changeThemeButton[1].addEventListener('click', () => {
+		const affectedElements = document.querySelectorAll(
+			".header--blue, .header--blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer",
+		)
+	
 		for (let el of affectedElements) {
-			el.classList.add("dark")
+			el.style.transition = "all 600ms"
 		}
-	} else if (themeStatus == "dark") {
-		themeStatus = "sepia"
-		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = "../src/img/icons/sepia.svg"
-		for (let el of affectedElements) {
-			el.classList.remove("dark")
-			el.classList.add("sepia")
+	
+		if (themeStatus == "light") {
+			themeStatus = "dark"
+			console.log(themeStatus)
+			changeThemeButton[1].children[0].src = "../src/img/icons/moon.svg"
+			for (let el of affectedElements) {
+				el.classList.add("dark")
+			}
+		} else if (themeStatus == "dark") {
+			themeStatus = "sepia"
+			console.log(themeStatus)
+			changeThemeButton[1].children[0].src = "../src/img/icons/sepia.svg"
+			for (let el of affectedElements) {
+				el.classList.remove("dark")
+				el.classList.add("sepia")
+			}
+		} else if (themeStatus == "sepia") {
+			themeStatus = "light"
+			console.log(themeStatus)
+			changeThemeButton[1].children[0].src = "../src/img/icons/sun.svg"
+			for (let el of affectedElements) {
+				el.classList.remove("sepia")
+			}
 		}
-	} else if (themeStatus == "sepia") {
-		themeStatus = "light"
-		console.log(themeStatus)
-		changeThemeButton[1].children[0].src = "../src/img/icons/sun.svg"
-		for (let el of affectedElements) {
-			el.classList.remove("sepia")
-		}
-	}
-})
+	})
+}
