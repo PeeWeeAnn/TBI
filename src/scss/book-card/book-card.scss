@@ -47,6 +47,8 @@
     }
 
     &__cover {
+        width: 255px;
+
         @include _1440 {
             width: 210px;
         }
@@ -69,6 +71,10 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        p {
+            text-align: justify;
+        }
     }
 }
 
@@ -159,7 +165,7 @@
     }
 
     &__remove {
-        display: none
+        display: none;
     }
 }
 
