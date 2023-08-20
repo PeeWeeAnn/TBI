@@ -1,15 +1,19 @@
 // Получаем элементы-кнопки, модальные окна и кнопки закрытия
-const modalWindows = document.querySelectorAll('#modalContent, #modalNotes, #modalAddNote');
+const modalWindows = document.querySelectorAll(
+	"#modalContent, #modalNotes, #modalAddNote",
+)
 // #modalDictionary
-const openModalButtons = document.querySelectorAll('#openModalContent, #openModalNotes, #openModalAddNote');
+const openModalButtons = document.querySelectorAll(
+	"#openModalContent, #openModalNotes, #openModalAddNote",
+)
 // #openModalDictionary
-const modalLoading = document.querySelector('#modalLoading')
+const modalLoading = document.querySelector("#modalLoading")
 const closeButtons = document.querySelectorAll(".modal-heading__close")
 
 // При нажатии на элементы-кнопки, отобразить модальное окно
 for (let i = 0; i < modalWindows.length; i++) {
-	if(openModalButtons[i]) {
-		openModalButtons[i].addEventListener('click', () => {
+	if (openModalButtons[i]) {
+		openModalButtons[i].addEventListener("click", () => {
 			modalWindows[i].classList.remove("modal--hidden")
 			document.body.style.overflow = "hidden"
 		})
@@ -111,7 +115,7 @@ for (let addButton of addButtons) {
 const popupButton = document.getElementById("popupButton")
 const popup = document.getElementById("popup")
 
-if(popupButton) {
+if (popupButton) {
 	popupButton.onclick = function () {
 		if (window.innerWidth <= 480) {
 			console.log("boobs", popup)
@@ -127,19 +131,18 @@ if(popupButton) {
 	}
 }
 
-
 const changeThemeButton = document.querySelectorAll(".base-button.white")
 let themeStatus = "light"
-if(changeThemeButton[1]) {
-	changeThemeButton[1].addEventListener('click', () => {
+if (changeThemeButton[1]) {
+	changeThemeButton[1].addEventListener("click", () => {
 		const affectedElements = document.querySelectorAll(
 			".header--blue, .header--blue-nav__button, .reader, .reader-navigation__back, .reader-navigation__book-name, .reader-control, .base-button.white, .base-button, .footer",
 		)
-	
+
 		for (let el of affectedElements) {
 			el.style.transition = "all 600ms"
 		}
-	
+
 		if (themeStatus == "light") {
 			themeStatus = "dark"
 			console.log(themeStatus)
@@ -164,4 +167,22 @@ if(changeThemeButton[1]) {
 			}
 		}
 	})
+}
+
+const showPasswordButtons = document.querySelectorAll(
+	".authorization-form-inputs__button",
+)
+
+if (showPasswordButtons) {
+	for (let button of showPasswordButtons) {
+		button.addEventListener("click", (e) => {
+			e.preventDefault()
+			const passwordInput = e.currentTarget.previousElementSibling
+			if (passwordInput && passwordInput.type == "password") {
+				passwordInput.type = "text"
+			} else {
+				passwordInput.type = "password"
+			}
+		})
+	}
 }
