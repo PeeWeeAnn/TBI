@@ -4,11 +4,27 @@
 .our-services {
     margin: 110px 0 0 0;
 
+    @include _768 {
+        margin: 150px 0 0 0;
+    }
+
+    @include _480 {
+        margin: 100px 0 0 0;
+    }
+
     &__header {
         color: $color4;
         font-size: 40px;
         font-weight: 600;
         line-height: normal;
+
+        @include _768 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 28px;
+        }
     }
 }
 
@@ -22,7 +38,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: $color1;
 }
+
+/* .services-links > :nth-child(3) {
+    @include _480 {
+        height: 206px;
+        position: relative;
+    }
+} */
 
 .service-link {
     display: flex;
@@ -34,9 +58,19 @@
     border: 2px solid $color8;
     padding: 30px;
 
+    @include _480 {
+        padding: 30px 20px;
+    }
+
     &__button {
         display: flex;
         align-items: center;
+    }
+
+    &__button img {
+        @include _480 {
+            width: 40px;
+        }
     }
 }
 
@@ -45,12 +79,27 @@
     flex-direction: column;
     gap: 20px;
 
+    &--480 {
+        @include _480 {
+            height: 216px;
+            position: relative;
+        }
+    }
+
     &__text {
-        width: 920px;
+        width: calc(100% - 120px);
         color: $color6;
         font-family: "Onest", sans-serif;
         font-size: 18px;
         line-height: 120%;
+
+        @include _768 {
+            width: calc(100% - 20px);
+        }
+
+        @include _480 {
+            font-size: 16px;
+        }
     }
 
     &__soon {
@@ -63,6 +112,23 @@
         padding: 10px 15px;
         text-align: center;
         width: 401px;
+
+        @include _1000 {
+            width: 320px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        @include _768 {
+            font-size: 16px;
+            width: 260px;
+        }
+
+        @include _480 {
+            width: 280px;
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     &__button {
@@ -76,6 +142,10 @@
         font-weight: 700;
         line-height: 120%;
     }
+
+    &__button span {
+        font-size: 18px;
+    }
 }
 
 .service-link-block-heading {
@@ -88,5 +158,9 @@
         font-size: 24px;
         font-weight: 600;
         line-height: normal;
+
+        @include _480 {
+            font-size: 18px;
+        }
     }
 }

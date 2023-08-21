@@ -9,27 +9,34 @@
         font-weight: 500;
         line-height: 150%;
         color: $white;
+
+        @include _768 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 28px;
+        }
     }
 }
 
 .about-landing-wrapper {
-    width: calc(100% - 80px);
-    height: 307px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
-    background: $color2;
 }
 
 .about-landing-block {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 75%;
+    width: 60%;
+
+    @include _1000 {
+        width: 100%;
+    }
 
     &__text {
         color: $white;

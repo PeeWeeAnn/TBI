@@ -7,20 +7,37 @@
     &__image {
         position: absolute;
         left: 0;
+        left: 23px;
+        top: 26px;
+
+        @include _1440 {
+            width: 90px;
+            top: 45px;
+        }
+
+        @include _576 {
+            display: none;
+        }
     }
 }
 
 .support-wrapper {
-    width: calc(100% - 276px);
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 53px 86px 53px 190px;
     border-radius: 30px;
     box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
-    background: #d9d9d9;
+    background: $white;
     position: relative;
+
+    @include _1440 {
+        padding: 53px 30px 53px 148px;
+    }
+
+    @include _576 {
+        padding: 50px 20px 15px 20px;
+    }
 }
 
 .support-block {
@@ -29,9 +46,38 @@
     align-items: center;
     width: 100%;
 
+    @include _1000 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    @include _576 {
+        align-items: center;
+    }
+
     &__social {
         display: flex;
         gap: 20px;
+
+        @include _1440 {
+            gap: 15px;
+        }
+    }
+
+    &__social img {
+        @include _480 {
+            width: 32px;
+        }
+    }
+
+    &__image {
+        display: none;
+
+        @include _576 {
+            display: block;
+            width: 90px;
+        }
     }
 }
 
@@ -40,12 +86,24 @@
     flex-direction: column;
     gap: 10px;
 
+    @include _576 {
+        align-items: center;
+    }
+
     &__header {
         color: $color1;
         font-family: "Onest", sans-serif;
         font-size: 40px;
         font-weight: 700;
         line-height: 110%;
+
+        @include _768 {
+            font-size: 32px;
+        }
+
+        @include _480 {
+            font-size: 28px;
+        }
     }
 
     &__text {
@@ -53,5 +111,14 @@
         color: $color3;
         font-size: 18px;
         line-height: 130%;
+
+        @include _1000 {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        @include _576 {
+            text-align: center;
+        }
     }
 }
