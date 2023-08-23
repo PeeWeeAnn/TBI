@@ -2,12 +2,6 @@
 @import "../_variables/mixins";
 
 .header {
-    margin: 0 0 40px 0;
-
-    @include _768 {
-        margin: 0 0 30px 0;
-    }
-
     &--white {
         .header-wrapper {
             height: 100px;
@@ -27,21 +21,39 @@
                 font-weight: 500;
                 color: $color1;
 
+                @include _1440 {
+                    font-size: 16px;
+                }
+
+                @include _1000 {
+                    font-size: 24px;
+                }
+
                 @include _480 {
                     font-size: 16px;
+                }
+            }
+
+            &__image {
+                @include _1440 {
+                    width: 20px;
+                }
+
+                @include _1000 {
+                    width: 32px;
                 }
             }
         }
 
         .header-nav {
             display: flex;
-            gap: 35px;
+            gap: 30px;
 
             &__button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 124px;
+                width: 90px;
                 height: 48px;
                 background: $color7;
                 border-radius: 10px;
@@ -71,13 +83,14 @@
         .header-nav-list {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
 
             @include _1000 {
                 display: none;
             }
 
             &__link {
+                font-size: 14px;
                 color: $color2;
             }
 
@@ -88,7 +101,7 @@
             }
         }
     }
-        
+
     &--blue {
         background: $color1;
 
@@ -110,21 +123,39 @@
                 font-weight: 500;
                 color: $white;
 
+                @include _1440 {
+                    font-size: 16px;
+                }
+
+                @include _1000 {
+                    font-size: 24px;
+                }
+
                 @include _480 {
                     font-size: 16px;
+                }
+            }
+
+            &__image {
+                @include _1440 {
+                    width: 20px;
+                }
+
+                @include _1000 {
+                    width: 32px;
                 }
             }
         }
 
         .header-nav {
             display: flex;
-            gap: 35px;
+            gap: 30px;
 
             &__button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 124px;
+                width: 90px;
                 height: 48px;
                 background: $color7;
                 border-radius: 10px;
@@ -154,13 +185,14 @@
         .header-nav-list {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
 
             @include _1000 {
                 display: none;
             }
 
             &__link {
+                font-size: 14px;
                 color: $white;
             }
 

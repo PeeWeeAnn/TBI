@@ -78,6 +78,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: calc(100% - 120px);
+
+    @include _576 {
+        width: 100%;
+    }
 
     &--480 {
         @include _480 {
@@ -87,7 +92,6 @@
     }
 
     &__text {
-        width: calc(100% - 120px);
         color: $color6;
         font-family: "Onest", sans-serif;
         font-size: 18px;
