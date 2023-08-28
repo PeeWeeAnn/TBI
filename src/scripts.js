@@ -118,9 +118,7 @@ const popup = document.getElementById("popup")
 if (popupButton) {
 	popupButton.onclick = function () {
 		if (window.innerWidth <= 480) {
-			console.log("boobs", popup)
 			popup.classList.add("popup--mobile")
-			console.log("boobs", popup.classList)
 		} else {
 			if (popup.style.display === "none" || popup.style.display === "") {
 				popup.style.display = "block"

@@ -4,9 +4,9 @@
 .popup {
     width: calc(268px - 40px);
     display: none;
-    position: fixed;
-    top: 41%;
-    left: 76%;
+    position: absolute;
+    top: 200px;
+    left: 40px;
     transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 30px;
@@ -22,6 +22,7 @@
     }
 
     &--mobile {
+        position: fixed;
         width: 100%;
         display: block;
         top: 0;

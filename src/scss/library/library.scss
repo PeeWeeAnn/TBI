@@ -68,22 +68,60 @@
     }
 }
 
-.library-list-books a {
+.library-list-books-book {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
     width: 255px;
 
-    @include _1000 {
+    @include _1440 {
+        width: 215px;
+    }
+
+    @include _576 {
         width: 210px;
     }
 
     @include _480 {
         width: 160px;
     }
-}
 
-.library-list-books-book {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    &__button {
+        position: absolute;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        width: 44px;
+        height: 44px;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+
+    &__image {
+        width: 255px;
+        height: 380px;
+        object-fit: cover;
+
+        @include _1440 {
+            width: 215px;
+            height: 320px;
+        }
+
+        @include _576 {
+            width: 210px;
+        }
+
+        @include _480 {
+            width: 160px;
+            height: 235px;
+        }
+    }
 }
 
 .library-list-books-book-block {
