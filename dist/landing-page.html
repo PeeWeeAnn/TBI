@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Тіл білімі институты</title>
+    <script>
+        function copyToClipboard(event, text) {
+            navigator.clipboard.writeText(text);
+            event.preventDefault();
+        }
+    </script>
 </head>
 
 <body class="landing-page">
@@ -182,22 +188,22 @@
                             </span>
                         </div>
                         <div class="support-block__social">
-                            <a href="">
+                            <a href="https://www.facebook.com/share.php?u=https://www.syntax.kz">
                                 <img src="../src/img/icons/facebook.svg" alt="Facebook">
                             </a>
-                            <a href="">
+                            <a href="https://www.twitter.com/share?url=https://www.syntax.kz/">
                                 <img src="../src/img/icons/twitter.svg" alt="Twitter">
                             </a>
-                            <a href="">
+                            <a href="https://vk.com/share.php?url=https://www.syntax.kz">
                                 <img src="../src/img/icons/vk.svg" alt="VK">
                             </a>
-                            <a href="">
+                            <a href="https://t.me/share/url?url=https://www.syntax.kz">
                                 <img src="../src/img/icons/telegram-support.svg" alt="Telegram">
                             </a>
-                            <a href="">
+                            <a href="whatsapp://send?text=https://www.syntax.kz">
                                 <img src="../src/img/icons/whatsapp-support.svg" alt="WhatsApp">
                             </a>
-                            <a href="">
+                            <a href="#" onclick="copyToClipboard(event, 'https://www.syntax.kz')">
                                 <img src="../src/img/icons/copy-link.svg" alt="Copy link">
                             </a>
                         </div>
