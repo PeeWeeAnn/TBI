@@ -11,11 +11,92 @@
 
 <body>
 
-    <div class="message message--notification"></div>
+    <div class="message message--notification">
+        <div class="message__icon">
+            <img src="../src/img/icons/info-circle.svg" alt="">
+        </div>
+        <div class="message--notification__info message--notification-info">
+            <h4 class="message--notification-info__header">
+                Сообщение
+            </h4>
+            <p class="message--notification-info__text">
+                Какое-то информационное сообщение
+            </p>
+        </div>
+        <button class="message--notification__close-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="vuesax/linear/close-square">
+                    <g id="close-square">
+                        <path id="Vector" d="M9.16992 14.83L14.8299 9.17001" stroke="#6DA6E4" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_2" d="M14.8299 14.83L9.16992 9.17001" stroke="#6DA6E4" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_3"
+                            d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                            stroke="#6DA6E4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+    </div>
 
-    <div class="message message--notification"></div>
+    <div class="message message--error">
+        <div class="message__icon">
+            <img src="../src/img/icons/danger.svg" alt="">
+        </div>
+        <div class="message--error__info message--error-info">
+            <h4 class="message--error-info__header">
+                Ошибка
+            </h4>
+            <p class="message--error-info__text">
+                Предупреждение об ошибке
+            </p>
+        </div>
+        <button class="message--error__close-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="vuesax/linear/close-square">
+                    <g id="close-square">
+                        <path id="Vector" d="M9.16992 14.83L14.8299 9.17" stroke="#FF3E4C" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_2" d="M14.8299 14.83L9.16992 9.17" stroke="#FF3E4C" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_3"
+                            d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                            stroke="#FF3E4C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+    </div>
 
-    <div class="message message--notification"></div>
+    <div class="message message--success">
+        <div class="message__icon">
+            <img src="../src/img/icons/tick-circle.svg" alt="">
+        </div>
+        <div class="message--success__info message--success-info">
+            <h4 class="message--success-info__header">
+                Успех
+            </h4>
+            <p class="message--success-info__text">
+                Текст скопирован в буфер обмена
+            </p>
+        </div>
+        <button class="message--success__close-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="vuesax/linear/close-square">
+                    <g id="close-square">
+                        <path id="Vector" d="M9.16992 14.83L14.8299 9.17" stroke="#67D449" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_2" d="M14.8299 14.83L9.16992 9.17" stroke="#67D449" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path id="Vector_3"
+                            d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                            stroke="#67D449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+    </div>
 
     <script src="bundle.js"></script>
 </body>

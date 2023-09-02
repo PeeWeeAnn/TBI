@@ -1,0 +1,107 @@
+@import "../_variables/variables";
+@import "../_variables/mixins";
+
+.message {
+    display: flex;
+    width: 354px;
+    padding: 16px;
+    justify-content: space-between;
+    border-radius: 7px;
+
+    &__icon {
+        height: 24px;
+    }
+
+    &--notification {
+        background: $color1;
+
+        &-info {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__header {
+                color: $white;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 150%;
+            }
+
+            &__text {
+                color: $white;
+                font-size: 14px;
+                line-height: 120%;
+            }
+        }
+
+        &__close-button {
+            background: transparent;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+        }
+    }
+
+    &--error {
+        background: #fce7e6;
+
+        &-info {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__header {
+                color: $error;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 150%;
+            }
+
+            &__text {
+                color: $error;
+                font-size: 14px;
+                line-height: 120%;
+            }
+        }
+
+        &__close-button {
+            background: transparent;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+        }
+    }
+
+    &--success {
+        background: $color7;
+
+        &-info {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__header {
+                color: $color2;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 150%;
+            }
+
+            &__text {
+                color: $color2;
+                font-size: 14px;
+                line-height: 120%;
+            }
+        }
+
+        &__close-button {
+            background: transparent;
+            width: 24px;
+            height: 24px;
+            padding: 0;
+        }
+    }
+}

@@ -176,6 +176,7 @@ if (showPasswordButtons) {
 		button.addEventListener("click", (e) => {
 			e.preventDefault()
 			const passwordInput = e.currentTarget.previousElementSibling
+			passwordInput.focus()
 			if (passwordInput && passwordInput.type == "password") {
 				passwordInput.type = "text"
 			} else {
