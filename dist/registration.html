@@ -115,18 +115,29 @@
                     </div>
                     <form class="authorization__form authorization-form" action="">
                         <div class="authorization-form__inputs authorization-form-inputs">
-                            <input class="authorization-form-inputs__input" type="text" placeholder="Аты">
-                            <input class="authorization-form-inputs__input" type="text" placeholder="Тегi">
-                            <input class="authorization-form-inputs__input" type="email" placeholder="E-mail">
+                            <input id="name" class="authorization-form-inputs__input" type="text" required>
+                            <label for="name" class="authorization-form-inputs__placeholder">Аты</label>
+                        </div>
+                        <div class="authorization-form__inputs authorization-form-inputs">
+                            <input id="second-name"class="authorization-form-inputs__input" type="text" required>
+                            <label for="second-name "class="authorization-form-inputs__placeholder">Тегi</label>
+                        </div>
+                        <div class="authorization-form__inputs authorization-form-inputs">
+                            <input id="email" class="authorization-form-inputs__input" type="text" required>
+                            <label for="email" class="authorization-form-inputs__placeholder" type="email" placeholder="E-mail">E-mail</label>
+                        </div>
+
+                        <div class="authorization-form__inputs authorization-form-inputs">
                             <div class="authorization-form-inputs__block">
-                                <input class="authorization-form-inputs__input" type="password" placeholder="Құпиясөз">
+                                <input id="password" class="authorization-form-inputs__input" type="password" required>
+                                <label for="password" class="authorization-form-inputs__placeholder">Құпиясөз</label>
                                 <button class="authorization-form-inputs__button">
                                     <img src="../src/img/icons/eye.svg" alt="">
                                 </button>
                             </div>
                             <div class="authorization-form-inputs__block">
-                                <input class="authorization-form-inputs__input" type="password"
-                                    placeholder="Повторите пароль">
+                                <input id="password" class="authorization-form-inputs__input" type="password" required>
+                                <label for="password" class="authorization-form-inputs__placeholder">Повторите пароль</label>
                                 <button class="authorization-form-inputs__button">
                                     <img src="../src/img/icons/eye.svg" alt="">
                                 </button>

@@ -2,112 +2,161 @@
 @import "../_variables/mixins";
 
 .authorization {
-    display: flex;
-    align-items: center;
-    flex: 1 1 auto;
-    background: $white;
-    padding: 120px 0;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  background: $white;
+  padding: 120px 0;
 }
 
 .authorization-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: 100%;
-    width: 316px;
-    padding: 30px 40px;
-    background: $color6;
-    box-shadow: 0px 4px 20px 0px rgba(109, 166, 228, 0.3);
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 316px;
+  padding: 30px 40px;
+  background: $color6;
+  box-shadow: 0px 4px 20px 0px rgba(109, 166, 228, 0.3);
+  border-radius: 16px;
 
-    @include _480 {
-        padding: 30px 20px;
-        width: 260px;
-    }
+  @include _480 {
+    padding: 30px 20px;
+    width: 260px;
+  }
 }
 
 .authorization-heading-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    color: $color1;
+  }
+
+  &__button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    &__header {
-        font-size: 24px;
-        font-weight: 700;
-        line-height: normal;
-        color: $color1;
-    }
-
-    &__button {
-        display: flex;
-        align-items: center;
-        background: transparent;
-    }
+    background: transparent;
+  }
 }
 
 .authorization-form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
-    &__button {
-        height: 48px;
-        padding: 10px 20px;
-        background: $color1;
-        color: $white;
-        font-family: "Onest", sans-serif;
-        font-size: 14px;
-        border-radius: 10px;
-    }
+  &__button {
+    height: 48px;
+    padding: 10px 20px;
+    background: $color1;
+    color: $white;
+    font-family: "Onest", sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+  }
 }
 
 .authorization-form-inputs {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
 
-    &__input {
-        &:focus {
-            color: $color2;
-            border: 1px solid $color5;
-            transition: 0.1s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__placeholder {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    display: block;
+    font-size: 14px;
+    color: rgba(77, 77, 77, 0.5);
+    user-select: none;
+    cursor: text;
+    &::after {
+      position: relative;
+      top: -3px;
+      left: 1px;
+      display: inline-block;
+      content: "*";
+      color: $error;
+    }
+  }
+
+  &__input {
+    &:focus {
+      color: $color2;
+      border: 1px solid $color5;
+      transition: 0.2s ease;
+    }
+
+    &:disabled {
+      color: $color2;
+      border: 1px solid $color5;
+      transition: 0.2s ease;
+    }
+
+    &[type="text"] {
+      &:focus + .authorization-form-inputs__placeholder,
+      &:valid + .authorization-form-inputs__placeholder,
+      &:disabled + .authorization-form-inputs__placeholder {
+        display: none;
+      }
+    }
+
+    &[type="password"] {
+        &:focus + .authorization-form-inputs__placeholder,
+        &:valid + .authorization-form-inputs__placeholder,
+        &:disabled + .authorization-form-inputs__placeholder {
+          display: none;
         }
     }
 
-    &__block {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    &::placeholder {
+      color: transparent;
     }
+  }
 
-    &__button {
-        position: absolute;
-        right: 15px;
-        top: 13px;
-        background: transparent;
-        padding: 0;
-    }
+  &__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    &__link {
-        color: $color1;
-        text-align: center;
-        font-size: 14px;
-    }
+  &__button {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    background: transparent;
+    padding: 0;
+  }
+
+  &__link {
+    color: $color1;
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 .authorization-form-block {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
 
-    &__text {
-        color: $color8;
-    }
+  &__text {
+    color: $color8;
+  }
 
-    &__link {
-        color: $color1;
-    }
+  &__link {
+    color: $color1;
+  }
 }
