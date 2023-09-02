@@ -41,13 +41,6 @@
     background: $color1;
 }
 
-/* .services-links > :nth-child(3) {
-    @include _480 {
-        height: 206px;
-        position: relative;
-    }
-} */
-
 .service-link {
     display: flex;
     justify-content: space-between;
@@ -57,6 +50,18 @@
     box-shadow: 0px 4px 30px 0px rgba(146, 168, 201, 0.2);
     border: 2px solid $color8;
     padding: 30px;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+
+    &:hover {
+        background: $color5;
+        transition: 0.3s ease all;
+
+        svg {
+            color: $color7;
+        }
+    }
 
     @include _480 {
         padding: 30px 20px;
@@ -67,7 +72,9 @@
         align-items: center;
     }
 
-    &__button img {
+    &__button svg {
+        color: white;
+
         @include _480 {
             width: 40px;
         }

@@ -58,9 +58,17 @@
                 background: $color7;
                 border-radius: 10px;
                 color: $color2;
+                -webkit-transition: 0.3s ease;
+                -moz-transition: 0.3s ease;
+                -o-transition: 0.3s ease;
 
                 @include _1000 {
                     display: none;
+                }
+
+                &:hover {
+                    background-color: $color5;
+                    transition: 0.3s ease;
                 }
             }
 
@@ -160,9 +168,17 @@
                 background: $color7;
                 border-radius: 10px;
                 color: $color2;
+                -webkit-transition: 0.3s ease;
+                -moz-transition: 0.3s ease;
+                -o-transition: 0.3s ease;
 
                 @include _1000 {
                     display: none;
+                }
+
+                &:hover {
+                    background-color: $color5;
+                    transition: 0.3s ease;
                 }
             }
 

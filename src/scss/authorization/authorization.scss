@@ -67,6 +67,14 @@
     flex-direction: column;
     gap: 20px;
 
+    &__input {
+        &:focus {
+            color: $color2;
+            border: 1px solid $color5;
+            transition: 0.2s ease;
+        }
+    }
+
     &__block {
         position: relative;
         display: flex;
